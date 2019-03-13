@@ -2,8 +2,8 @@ var xor = require('./../index.js');
 var key='This is the key';
 var data='Here is some data to be encoded and decoded.';
 
-var encoded=xor.encode(key,data);
-var decoded=xor.decode(key,encoded);
+var encoded=xor.encode(data,key);
+var decoded=xor.decode(encoded,key);
 console.log('Encoding...');
 console.log('...key: '+key);
 console.log('...data: '+data);

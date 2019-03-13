@@ -3,6 +3,6 @@ var data='123';
 var key='abc';
 var expected='UFBQ';
 
-var encoded=xor.encode(key,data);
+var encoded=xor.encode(data,key);
 console.log('Encoding... key: '+key+' data: '+data+' output: '+encoded+' expected: '+expected);
 console.log(encoded==expected ? 'Passed!' : 'Failed!');
