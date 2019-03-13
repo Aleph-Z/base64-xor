@@ -1,10 +1,14 @@
+var key_init
 var B64XorCipher = {
-  encode: function(key, data) {
-    return new Buffer.from(xorStrings(key, data),'utf8').toString('base64');
+  init: function(key){
+    key_init = key
   },
-  decode: function(key, data) {
+  encode: function(data, key) {
+    return new Buffer.from(xorStrings(key||key_init, data),'utf8').toString('base64');
+  },
+  decode: function(data, key) {
     data = new Buffer.from(data,'base64').toString('utf8');
-    return xorStrings(key, data);
+    return xorStrings(key||key_init, data);
   }
 };
 
